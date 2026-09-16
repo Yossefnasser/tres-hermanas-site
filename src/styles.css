@@ -17,15 +17,19 @@
    - mobile design renders below lg (1024px)
    - desktop design renders at lg and up
    Variant wrappers are plain <div>s; the sections inside keep their own
-   display (flex/grid) so we only ever toggle visibility on the wrapper. */
+   display (flex/grid) so we only ever toggle visibility on the wrapper.
+   `!important` guards against source-order clashes with the Tailwind Play
+   CDN, which injects its generated utilities AFTER this stylesheet in the
+   production build (same specificity would otherwise let `.flex` override
+   the hiding — this is what duplicated the hero in deployment). */
 @media (min-width: 1024px) {
   [data-variant='mobile'] {
-    display: none;
+    display: none !important;
   }
 }
 @media (max-width: 1023.98px) {
   [data-variant='desktop'] {
-    display: none;
+    display: none !important;
   }
 }
 

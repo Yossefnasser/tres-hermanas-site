@@ -13,7 +13,7 @@
 
 const HERO_VIDEO = {
   src: '/videos/1.mp4',
-  srcMobile: '',
+  srcMobile: '/videos/2.mp4',
   poster: '',
   posterMobile: ''
 };
@@ -122,13 +122,13 @@ function statsStrip(variant) {
 export function hero() {
   return `
   <!-- ================= HERO VIDEO (DESKTOP) ================= -->
-  <div data-variant="desktop" class="flex flex-col">
+  <div data-variant="desktop">
     ${videoSection('desktop')}
     ${statsStrip('desktop')}
   </div>
 
   <!-- ================= HERO VIDEO (MOBILE) ================= -->
-  <div data-variant="mobile" class="flex flex-col">
+  <div data-variant="mobile">
     ${videoSection('mobile')}
     ${statsStrip('mobile')}
   </div>`;
