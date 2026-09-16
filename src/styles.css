@@ -1,0 +1,35 @@
+/*
+ * Global demo styles. All tokens (colors / spacing / typography) live in the
+ * tailwind.config block inside index.html — this file only carries the few
+ * things Tailwind utilities can't express.
+ */
+
+/* Horizontal snap rails (As Seen On, mobile filter row) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Layout switching between the two Stitch designs:
+   - mobile design renders below lg (1024px)
+   - desktop design renders at lg and up
+   Variant wrappers are plain <div>s; the sections inside keep their own
+   display (flex/grid) so we only ever toggle visibility on the wrapper. */
+@media (min-width: 1024px) {
+  [data-variant='mobile'] {
+    display: none;
+  }
+}
+@media (max-width: 1023.98px) {
+  [data-variant='desktop'] {
+    display: none;
+  }
+}
+
+/* Consultation modal fade-in */
+#consultationModal.open {
+  display: flex;
+}

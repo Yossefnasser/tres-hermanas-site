@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Build output (regenerated with `npm run build`; deploy from CI or a gh-pages branch)
+dist/
+
+# Local env / editor junk
+.env
+.env.*
+*.local
+.DS_Store
+Thumbs.db
+
+# Vite / tooling caches
+.vite/
+
+# Working notes (Stitch inspection copies) — not part of the app
+_inspect/
+
+stitch_luxury_jewelry_ecommerce_ui_design (1)/

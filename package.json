@@ -1,0 +1,15 @@
+{
+  "name": "tres-hermanas-homepage-demo",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Standalone homepage demo recreating the TRES HERMANAS Stitch export (desktop + mobile). Image slots are placeholders by design.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.8"
+  }
+}
