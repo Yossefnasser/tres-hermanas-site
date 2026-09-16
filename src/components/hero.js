@@ -13,7 +13,7 @@
 
 const HERO_VIDEO = {
   src: '/videos/1.mp4',
-  srcMobile: '/videos/1.mp4',
+  srcMobile: '',
   poster: '',
   posterMobile: ''
 };
