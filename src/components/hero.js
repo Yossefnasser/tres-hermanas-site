@@ -1,168 +1,160 @@
-import { placeholder } from './placeholder.js';
+/**
+ * Hero — full-bleed looping video (desktop + mobile variants, switched by
+ * data-variant wrappers at the 1024px breakpoint — see styles.css).
+ *
+ * ✏️ TO ADD YOUR VIDEO:
+ *   1. Drop the file into /public  (e.g. /public/videos/hero.mp4)
+ *   2. Set `src` (and optionally `poster`) in HERO_VIDEO below —
+ *      leave `srcMobile` empty to reuse `src` on mobile too.
+ *
+ * Until a src is set, the section renders a dark tonal plate under the
+ * gradient + copy, so the page still looks intentional in the meantime.
+ */
 
-/** Hero — desktop split editorial layout + mobile stacked editorial layout. */
+const HERO_VIDEO = {
+  src: '/videos/1.mp4',
+  srcMobile: '/videos/1.mp4',
+  poster: '',
+  posterMobile: ''
+};
+
+/* ------------------------------------------------------------------ */
+/* Overlaid copy (eyebrow / headline / sub / CTAs)                     */
+/* ------------------------------------------------------------------ */
+function heroCopy() {
+  return `
+  <div class="w-full max-w-2xl flex flex-col gap-space-sm lg:gap-space-md text-surface">
+    <span class="inline-block self-start px-space-sm py-1 bg-surface/15 backdrop-blur-sm border border-surface/25 font-label-sm text-label-sm uppercase tracking-[0.25em]">
+      Haute Joaillerie · Madrid &amp; Mediterranean
+    </span>
+    <h1 class="font-display-lg-mobile text-display-lg-mobile lg:font-display-lg lg:text-display-lg leading-[1.08] tracking-tight drop-shadow-sm">
+      Handmade for the <span class="italic font-light text-primary-fixed">bold &amp; beautiful</span>
+    </h1>
+    <p class="font-body-md text-body-md lg:font-body-lg lg:text-body-lg text-surface/85 max-w-xl leading-relaxed">
+      Ethically sourced Colombian emeralds, radiant natural diamonds, and talismanic charms sculpted in timeless solid 18K gold.
+    </p>
+    <div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+      <a
+        class="inline-flex items-center justify-center px-space-lg lg:px-space-xl py-space-sm lg:py-space-md bg-surface text-on-surface hover:bg-primary-fixed transition-colors font-label-md text-label-md uppercase tracking-[0.18em] text-center shadow-sm"
+        href="#collections"
+      >
+        Explore The Collection
+      </a>
+      <button
+        class="inline-flex items-center gap-space-xs font-label-md text-label-md uppercase tracking-[0.18em] text-surface hover:text-primary-fixed transition-colors py-space-sm group"
+        data-open-consultation
+      >
+        <span>Book A Consultation</span>
+        <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+      </button>
+    </div>
+  </div>`;
+}
+
+/* ------------------------------------------------------------------ */
+/* Video section (shared by both variants)                             */
+/* ------------------------------------------------------------------ */
+function videoSection(variant) {
+  const isDesktop = variant === 'desktop';
+  const heightCls = isDesktop
+    ? 'h-[calc(100svh_-_5rem)] min-h-[600px] max-h-[880px]'
+    : 'h-[calc(100svh_-_4rem)] min-h-[500px]';
+  const src = (isDesktop ? HERO_VIDEO.src : HERO_VIDEO.srcMobile || HERO_VIDEO.src) || '';
+  const poster = (isDesktop ? HERO_VIDEO.poster : HERO_VIDEO.posterMobile || HERO_VIDEO.poster) || '';
+
+  return `
+  <section
+    data-hero-video-section
+    role="region"
+    aria-label="Featured jewellery showreel"
+    class="relative w-full overflow-hidden bg-inverse-surface ${heightCls}"
+  >
+    <video
+      data-hero-video
+      class="absolute inset-0 w-full h-full object-cover object-center"
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="metadata"
+      disablepictureinpicture
+      aria-hidden="true"
+      ${src ? `src="${src}"` : ''}
+      ${poster ? `poster="${poster}"` : ''}
+    ></video>
+    <div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/35 to-on-surface/10" aria-hidden="true"></div>
+    <div class="absolute inset-x-0 bottom-0 px-margin-mobile lg:px-margin pb-space-2xl">
+      ${heroCopy()}
+    </div>
+  </section>`;
+}
+
+/* ------------------------------------------------------------------ */
+/* Trust stats strip under the video                                   */
+/* ------------------------------------------------------------------ */
+function statsStrip(variant) {
+  const isDesktop = variant === 'desktop';
+  const stats = [
+    { value: '18KT', label: 'Solid Gold Only' },
+    { value: 'Muzo', label: 'Certified Emeralds' },
+    { value: '100%', label: 'Handmade Atelier' }
+  ];
+
+  return `
+  <div class="w-full bg-surface border-b ${isDesktop ? 'border-outline-variant/50' : 'border-outline-variant/30'}">
+    <div class="${isDesktop ? 'px-margin py-space-md' : 'px-margin-mobile py-space-sm'} grid grid-cols-3 gap-space-sm text-left">
+      ${stats
+        .map(
+          (s) => `
+      <div>
+        <p class="font-headline-sm text-headline-sm text-on-surface ${isDesktop ? '' : '!text-[16px] !leading-[20px]'}">${s.value}</p>
+        <p class="font-label-sm text-label-sm text-outline uppercase tracking-wider ${isDesktop ? '' : '!text-[8px]'}">${s.label}</p>
+      </div>`
+        )
+        .join('')}
+    </div>
+  </div>`;
+}
+
+/* ------------------------------------------------------------------ */
+/* Public API                                                          */
+/* ------------------------------------------------------------------ */
 export function hero() {
   return `
-  <!-- ================= DESKTOP HERO ================= -->
-  <div data-variant="desktop">
-    <section class="relative w-full bg-surface pb-space-2xl">
-      <div class="w-full px-margin">
-        <div class="grid grid-cols-12 gap-space-xl items-center pt-space-xl">
-          <div class="col-span-5 flex flex-col justify-center space-y-space-lg">
-            <div class="space-y-space-xs">
-              <span class="inline-block px-space-sm py-1 bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase tracking-[0.25em]">
-                Haute Joaillerie · Madrid &amp; Mediterranean
-              </span>
-              <p class="font-label-md text-label-md uppercase tracking-[0.2em] text-primary pt-space-xs">Everyday 18KT Gold Fine Jewellery</p>
-            </div>
-            <h1 class="font-display-lg text-display-lg text-on-surface leading-[1.1] tracking-tight">
-              Handmade for the <span class="italic font-headline-lg font-light text-primary">bold &amp; beautiful</span>
-            </h1>
-            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg leading-relaxed">
-              Ethically sourced Colombian emeralds, radiant natural diamonds, and talismanic charms sculpted in timeless solid 18K gold. Crafted for sun-drenched days and whispered evenings.
-            </p>
-            <div class="flex items-center gap-space-md pt-space-sm">
-              <a class="inline-flex items-center justify-center px-space-xl py-space-md bg-on-surface text-surface hover:bg-primary transition-colors font-label-md text-label-md uppercase tracking-[0.18em] text-center shadow-sm" href="#collections">
-                Explore The Collection
-              </a>
-              <a class="inline-flex items-center justify-start gap-space-xs font-label-md text-label-md uppercase tracking-[0.18em] text-on-surface hover:text-primary transition-colors py-space-sm group" href="#ethos">
-                <span>Discover The Story</span>
-                <span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span>
-              </a>
-            </div>
-            <div class="pt-space-md grid grid-cols-3 gap-space-sm text-left bg-surface-container-low p-space-md">
-              <div>
-                <p class="font-headline-sm text-headline-sm text-on-surface">18KT</p>
-                <p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Solid Gold Only</p>
-              </div>
-              <div>
-                <p class="font-headline-sm text-headline-sm text-on-surface">Muzo</p>
-                <p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Certified Emeralds</p>
-              </div>
-              <div>
-                <p class="font-headline-sm text-headline-sm text-on-surface">100%</p>
-                <p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Handmade Atelier</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-span-7 grid grid-cols-12 gap-space-sm">
-            <div class="col-span-7 relative group overflow-hidden bg-surface-container shadow-md">
-              <div class="aspect-[3/4] overflow-hidden">
-              <img
-              src="/imgs/1.jpg"
-              alt="Emerald Cord Choker & Amulet on sunlit collarbone"
-              class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-              >
-                ${placeholder('Layered 18kt gold emerald necklace on crisp cotton blouse')}
-              </div>
-              <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-on-surface/80 via-on-surface/30 to-transparent p-space-md text-surface">
-                <span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed">The Sovereign Stack</span>
-                <p class="font-headline-sm text-headline-sm italic">Triple Emerald Colombian Cascades</p>
-              </div>
-            </div>
-            <div class="col-span-5 flex flex-col gap-space-sm">
-              <div class="relative group overflow-hidden bg-surface-container shadow-sm aspect-[4/5]">
-              <img
-              src="/imgs/2.jpg"
-              alt="Emerald Cord Choker & Amulet on sunlit collarbone"
-              class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-              >  
-              ${placeholder('Multi-gem talismanic pendant on leather cord')}
-                <div class="absolute top-space-xs right-space-xs bg-surface/90 backdrop-blur-sm px-space-xs py-1 text-on-surface font-label-sm text-label-sm uppercase tracking-wider">
-                  Signature Charm
-                </div>
-              </div>
-              <div class="bg-surface-container p-space-lg flex flex-col justify-center gap-space-md flex-1">
-                <div>
-                  <span class="font-label-md text-label-md text-primary uppercase tracking-[0.2em]">Designed By</span>
-                  <p class="font-headline-md text-headline-md text-on-surface pt-1">Marian Samuel Emil</p>
-                </div>
-                <p class="font-headline-sm text-headline-sm italic text-on-surface-variant leading-snug">
-                  “Pieces designed to wake with you, bathe in the sea, and dance through midnight.”
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- ================= HERO VIDEO (DESKTOP) ================= -->
+  <div data-variant="desktop" class="flex flex-col">
+    ${videoSection('desktop')}
+    ${statsStrip('desktop')}
   </div>
 
-  <!-- ================= MOBILE HERO ================= -->
-  <div data-variant="mobile">
-    <section class="w-full px-margin-mobile pt-space-md pb-space-xl flex flex-col gap-space-md">
-      <div class="flex flex-col gap-space-xs">
-        <div class="flex flex-wrap items-center gap-1.5 text-primary">
-          <span class="font-label-sm text-label-sm uppercase tracking-[0.16em]">HAUTE JOAILLERIE · MARIAN SAMUEL EMIL</span>
-          <span class="text-outline/40 text-[10px]">•</span>
-          <span class="font-label-sm text-label-sm uppercase tracking-[0.14em] text-tertiary">EVERYDAY 18KT GOLD FINE JEWELLERY</span>
-        </div>
-        <h1 class="font-display-lg-mobile text-display-lg-mobile text-on-surface leading-tight mt-1">
-          Handmade for the <span class="italic font-display-lg-mobile text-primary font-normal">Bold &amp; Beautiful</span>
-        </h1>
-        <p class="font-body-md text-body-md text-on-surface-variant mt-1 leading-relaxed">
-          Ethically sourced Colombian emeralds, radiant natural diamonds, and talismanic charms sculpted in timeless solid 18K gold. Crafted for sun-drenched days and whispered evenings.
-        </p>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-space-xs pt-1">
-        <button class="w-full py-3.5 px-space-md bg-on-surface text-surface font-label-md text-label-md uppercase tracking-[0.14em] hover:bg-primary transition-colors flex items-center justify-center gap-2" data-scroll-to="#collections">
-          <span>EXPLORE THE COLLECTION</span>
-          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-        </button>
-        <button class="w-full py-3.5 px-space-md bg-surface-container-high text-on-surface font-label-md text-label-md uppercase tracking-[0.14em] hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-1" data-scroll-to="#ethos">
-          <span>DISCOVER THE STORY</span>
-        </button>
-      </div>
-      <div class="grid grid-cols-3 gap-1 py-2 bg-surface-container-low px-2 mt-1">
-        <div class="flex flex-col items-center text-center p-1">
-          <span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-widest">18KT GOLD</span>
-          <span class="font-label-sm text-[9px] text-tertiary uppercase leading-tight mt-0.5">SOLID ONLY</span>
-        </div>
-        <div class="flex flex-col items-center text-center p-1 bg-surface-container">
-          <span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-widest">MUZO CERTIFIED</span>
-          <span class="font-label-sm text-[9px] text-tertiary uppercase leading-tight mt-0.5">COLOMBIAN</span>
-        </div>
-        <div class="flex flex-col items-center text-center p-1">
-          <span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-widest">100% BENCH</span>
-          <span class="font-label-sm text-[9px] text-tertiary uppercase leading-tight mt-0.5">HAND ATELIER</span>
-        </div>
-      </div>
-      <div class="flex flex-col gap-space-md mt-2">
-        <div class="relative w-full overflow-hidden bg-surface-container-low shadow-sm">
-          <div class="w-full aspect-[4/5] overflow-hidden bg-surface-container">
-              <img
-              src="/imgs/1.jpg"
-              alt="Emerald Cord Choker & Amulet on sunlit collarbone"
-              class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-              >
-          </div>
-          <div class="p-space-md bg-surface-container-low flex items-center justify-between">
-            <div class="flex flex-col">
-              <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">PIÈCE UNIQUE</span>
-              <span class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Triple Emerald Colombian Cascade</span>
-            </div>
-            <span class="font-label-md text-label-md text-tertiary uppercase">Madrid Salon</span>
-          </div>
-        </div>
-        <div class="relative w-full bg-surface-container-high p-space-md flex flex-col gap-space-sm shadow-sm">
-          <div class="w-full aspect-[4/5] overflow-hidden bg-surface">
-            <img
-              src="/imgs/2.jpg"
-              alt="Emerald Cord Choker & Amulet on sunlit collarbone"
-              class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-              >
-          </div>
-          <div class="flex flex-col gap-1.5 pt-1">
-            <span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.16em]">THE ATELIER PHILOSOPHY</span>
-            <p class="font-headline-sm text-headline-sm italic text-on-surface leading-snug">
-              “Pieces designed to wake with you, bathe in the sea, and dance through midnight.”
-            </p>
-            <span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider mt-1">
-              — Marian Samuel Emil, Founder &amp; Head Goldsmith
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- ================= HERO VIDEO (MOBILE) ================= -->
+  <div data-variant="mobile" class="flex flex-col">
+    ${videoSection('mobile')}
+    ${statsStrip('mobile')}
   </div>`;
+}
+
+/**
+ * Boots every [data-hero-video] on the page:
+ *  - forces the muted property (autoplay policies require it even with the
+ *    muted attribute on some browsers)
+ *  - starts playback as soon as the browser can
+ *  - pauses when the tab is hidden, resumes on return
+ * Called once from main.js after the page is rendered.
+ */
+export function initHeroVideo() {
+  document.querySelectorAll('[data-hero-video]').forEach((video) => {
+    video.muted = true;
+
+    const tryPlay = () => video.play().catch(() => {});
+
+    if (video.currentSrc || video.getAttribute('src')) tryPlay();
+    video.addEventListener('canplay', tryPlay, { once: true });
+    video.addEventListener('loadeddata', tryPlay, { once: true });
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) video.pause();
+      else tryPlay();
+    });
+  });
 }

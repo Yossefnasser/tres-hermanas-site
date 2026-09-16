@@ -1,7 +1,7 @@
 import './styles.css';
 
 import { siteHeader } from './components/siteHeader.js';
-import { hero } from './components/hero.js';
+import { hero, initHeroVideo } from './components/hero.js';
 import { summerCapsule } from './components/summerCapsule.js';
 import { collections } from './components/collections.js';
 import { iconsCollection } from './components/iconsCollection.js';
@@ -30,6 +30,7 @@ document.getElementById('app').innerHTML = `
   ${overlays()}
 `;
 
+initHeroVideo();
 bindInteractions();
 
 function bindInteractions() {
