@@ -24,15 +24,9 @@ const HERO_VIDEO = {
 function heroCopy() {
   return `
   <div class="w-full max-w-2xl flex flex-col gap-space-sm lg:gap-space-md text-surface">
-    <span class="inline-block self-start px-space-sm py-1 bg-surface/15 backdrop-blur-sm border border-surface/25 font-label-sm text-label-sm uppercase tracking-[0.25em]">
-      Haute Joaillerie · Madrid &amp; Mediterranean
-    </span>
     <h1 class="font-display-lg-mobile text-display-lg-mobile lg:font-display-lg lg:text-display-lg leading-[1.08] tracking-tight drop-shadow-sm">
       Handmade for the <span class="italic font-light text-primary-fixed">bold &amp; beautiful</span>
     </h1>
-    <p class="font-body-md text-body-md lg:font-body-lg lg:text-body-lg text-surface/85 max-w-xl leading-relaxed">
-      Ethically sourced Colombian emeralds, radiant natural diamonds, and talismanic charms sculpted in timeless solid 18K gold.
-    </p>
     <div class="flex flex-wrap items-center gap-space-md pt-space-xs">
       <a
         class="inline-flex items-center justify-center px-space-lg lg:px-space-xl py-space-sm lg:py-space-md bg-surface text-on-surface hover:bg-primary-fixed transition-colors font-label-md text-label-md uppercase tracking-[0.18em] text-center shadow-sm"

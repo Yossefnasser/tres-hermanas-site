@@ -23,7 +23,6 @@ export function summerCapsule() {
           <div>
             <span class="font-label-sm text-label-sm uppercase tracking-[0.25em] text-primary">MEDITERRANEAN SUMMER CAPSULE · 2026</span>
             <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1">Sun-Drenched <span class="italic font-light text-primary">18KT Essentials</span></h2>
-            <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-space-xs leading-relaxed">Crafted for salt spray, linen afternoons, and golden hour aperitivos. Solid 18KT gold waterproof charms, emerald cords, and stackable diamond cuffs made to never be taken off.</p>
           </div>
           <div>
             <a class="inline-flex items-center gap-space-xs font-label-md text-label-md uppercase tracking-[0.18em] text-on-surface hover:text-primary transition-colors py-space-xs whitespace-nowrap group" href="#collections">
@@ -75,7 +74,6 @@ export function summerCapsule() {
           <span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.18em]">DAILY HEIRLOOMS</span>
         </div>
         <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Sun-Drenched 18KT Essentials</h2>
-        <p class="font-body-sm text-body-sm text-on-surface-variant">Crafted for salt spray, linen afternoons, and golden hour aperitivos.</p>
       </div>
       <div class="grid grid-cols-2 gap-gutter-mobile">
         ${capsuleProducts

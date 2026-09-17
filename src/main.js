@@ -41,7 +41,7 @@ function bindInteractions() {
     btn.addEventListener('click', () => {
       const name = btn.getAttribute('data-add-to-cart');
       const price = Number(btn.dataset.price || 0).toLocaleString('en-US');
-      toastItem.textContent = `${name} — €${price}`;
+      toastItem.textContent = `${name} — E£${price}`;
       toast.classList.remove('translate-y-24', 'opacity-0');
       toast.classList.add('translate-y-0', 'opacity-100');
       clearTimeout(toastTimer);

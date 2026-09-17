@@ -62,7 +62,6 @@ export function siteHeader() {
             ${brandMark('h-8 w-8')}
             <div class="flex flex-col">
               <span class="font-headline-sm text-headline-sm tracking-[0.08em] leading-none text-on-surface uppercase">TRES HERMANAS</span>
-              <span class="font-label-sm text-label-sm tracking-[0.2em] text-primary uppercase mt-0.5">HAUTE JOAILLERIE</span>
             </div>
           </a>
         </div>

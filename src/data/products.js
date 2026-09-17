@@ -19,7 +19,7 @@ export const capsuleProducts = [
     meta: ['Colombian Emerald', '18KT Solid Gold'],
     desc: 'Solid 18KT gold, untreated Colombian emerald, water-resistant Italian cord.',
     price: 890,
-    priceLabel: '€890'
+    priceLabel: 'E£890'
   },
   {
     name: 'Delicate Emerald & Diamond Cuffs',
@@ -32,7 +32,7 @@ export const capsuleProducts = [
     meta: ['Open Torques', '18KT Yellow Gold'],
     desc: '18KT solid gold flexible open wire bangle duo set with brilliant emeralds.',
     price: 1650,
-    priceLabel: '€1,650'
+    priceLabel: 'E£1,650'
   },
   {
     name: 'Sunlit Topaz & Pavé Orbit Ring',
@@ -45,7 +45,7 @@ export const capsuleProducts = [
     meta: ['Golden Honey Topaz', '18KT Gold Pavé'],
     desc: 'Pear cut radiant honey topaz cradled over crisscross diamond pavé stems.',
     price: 1850,
-    priceLabel: '€1,850'
+    priceLabel: 'E£1,850'
   },
   {
     name: 'Summer Multi-Gem Charm Cord',
@@ -58,7 +58,7 @@ export const capsuleProducts = [
     meta: ['Multi-Gem Cluster', '18KT Solid Gold'],
     desc: 'Quad clip-on pendant drops with Muzo emerald, Ceylon sapphire, and ruby.',
     price: 2450,
-    priceLabel: '€2,450'
+    priceLabel: 'E£2,450'
   }
 ];
 
@@ -72,7 +72,7 @@ export const iconProducts = [
     meta: ['Colombian Emerald', '18KT Solid Gold'],
     desc: 'Natural Colombian bezel-set emerald on adjustable hand-finished black cord.',
     price: 1280,
-    priceLabel: '€1,280'
+    priceLabel: 'E£1,280'
   },
   {
     name: 'Mediterranean Multi-Gem Amulet',
@@ -83,7 +83,7 @@ export const iconProducts = [
     meta: ['Multi-Gem Talisman', '18KT Solid Gold'],
     desc: 'Natural Ceylon sapphire, ruby, smoky quartz, and Colombian emerald drops.',
     price: 2450,
-    priceLabel: '€2,450'
+    priceLabel: 'E£2,450'
   },
   {
     name: 'Marquise Diamond & Emerald Ring',
@@ -94,7 +94,7 @@ export const iconProducts = [
     meta: ['Pavé & Marquise', '18KT Yellow Gold'],
     desc: 'Protective evil-eye contour with micro-pavé diamonds and central emerald.',
     price: 980,
-    priceLabel: '€980'
+    priceLabel: 'E£980'
   },
   {
     name: 'Diamond Star & Tennis Stack',
@@ -105,7 +105,7 @@ export const iconProducts = [
     meta: ['Fine Diamonds', '18KT Solid Gold'],
     desc: 'Includes bezel star chain, emerald cut drop charm, and round brilliant tennis link.',
     price: 3100,
-    priceLabel: '€3,100'
+    priceLabel: 'E£3,100'
   },
   {
     name: 'Cushion Cut Solitaire Honey Topaz',
@@ -116,7 +116,7 @@ export const iconProducts = [
     meta: ['Natural Golden Topaz', '18KT Gold Pavé'],
     desc: 'Deep golden cushion cut natural gem anchored in split diamond pavé prongs.',
     price: 1850,
-    priceLabel: '€1,850'
+    priceLabel: 'E£1,850'
   },
   {
     name: 'The Duo Delicate Emerald Cuff',
@@ -127,6 +127,6 @@ export const iconProducts = [
     meta: ['Open Torque', '18KT Yellow Gold'],
     desc: 'Solid gold flexible wire torque with terminal Colombian emerald and brilliant diamond.',
     price: 1420,
-    priceLabel: '€1,420'
+    priceLabel: 'E£1,420'
   }
 ];

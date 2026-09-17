@@ -52,7 +52,7 @@ export function bespoke() {
                   <span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Atelier Sample Vitrine</span>
                   <p class="font-headline-sm text-headline-sm text-on-surface">The Celestial &amp; Sea Collection</p>
                 </div>
-                <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">From €450 / Charm</span>
+                <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">From E£450 / Charm</span>
               </div>
             </div>
           </div>
