@@ -75,7 +75,7 @@ export function summerCapsule() {
           <span class="w-2 h-2 rounded-full bg-primary"></span>
           <span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.18em]">DAILY HEIRLOOMS</span>
         </div>
-        <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Sun-Drenched 18KT Essentials</h2>
+        <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Our Best Sellers</h2>
       </div>
       <div class="grid grid-cols-2 gap-gutter-mobile">
         ${capsuleProducts

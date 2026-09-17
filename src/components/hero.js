@@ -30,7 +30,7 @@ function heroCopy() {
     <div class="flex flex-wrap items-center gap-space-md pt-space-xs">
       <a
         class="inline-flex items-center justify-center px-space-lg lg:px-space-xl py-space-sm lg:py-space-md bg-surface text-on-surface hover:bg-primary-fixed transition-colors font-label-md text-label-md uppercase tracking-[0.18em] text-center shadow-sm"
-        href="#collections"
+        href="#summer-capsule"
       >
         Explore The Collection
       </a>
