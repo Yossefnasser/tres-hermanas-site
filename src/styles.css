@@ -39,6 +39,40 @@
 }
 
 /* ------------------------------------------------------------------
+   Announcement bar — infinite marquee. The track holds 6 copies of
+   the message and scrolls left by exactly one copy's width
+   (-100/6 %), so the loop is seamless. Pauses on hover.
+------------------------------------------------------------------- */
+.marquee-track {
+  width: max-content;
+  animation: marquee 24s linear infinite;
+}
+.marquee-item {
+  display: inline-block;
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% / 6));
+  }
+}
+[data-announcement]:hover .marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    width: auto;
+    justify-content: center;
+  }
+  .marquee-item:not(:first-child) {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------------
    As Seen On — shoppable jewellery hotspot dots
    Dot pulses; hover / keyboard focus / tap reveals .shop-pop (the
    jewellery image popover). Tap toggle handled in main.js (.is-open).

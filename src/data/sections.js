@@ -15,21 +15,21 @@ export const vitrines = [
   {
     label: 'Vitrine 01',
     title: 'Emeralds & Colored Gemstones',
-    img: '/imgs/2.jpg', // e.g. '/assets/imgs/vitrine-1.jpg'
+    img: '/imgs/10.jpg', // e.g. '/assets/imgs/vitrine-1.jpg'
     desc: 'Saturated Colombian Muzo emeralds, natural sapphire cabochons, and hand-cut bezel pendants.',
     cta: 'View 18 Emerald Designs'
   },
   {
     label: 'Vitrine 02',
     title: 'Layered 18KT Gold & Diamond Tennis',
-    img: '/imgs/1.jpg', // e.g. '/assets/imgs/vitrine-2.jpg'
+    img: '/imgs/18.png', // e.g. '/assets/imgs/vitrine-2.jpg'
     desc: 'Flawless diamond pavé chains, talismanic stars, emerald accent bangles, and fluid wrists.',
     cta: 'Explore Wrist Stacks'
   },
   {
     label: 'Vitrine 03',
     title: 'Signature Charms & Cord Amulets',
-    img: '/imgs/3.jpg', // e.g. '/assets/imgs/vitrine-3.jpg'
+    img: '/imgs/4.jpg', // e.g. '/assets/imgs/vitrine-3.jpg'
     desc: 'Hand-rolled Italian leather cord with clip-in gold gem charms for casual Mediterranean elegance.',
     cta: 'Discover Cord Amulets'
   },
