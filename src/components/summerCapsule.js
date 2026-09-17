@@ -22,7 +22,7 @@ export function summerCapsule() {
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pb-space-sm border-b border-outline-variant/30">
           <div>
             <span class="font-label-sm text-label-sm uppercase tracking-[0.25em] text-primary">MEDITERRANEAN SUMMER CAPSULE · 2026</span>
-            <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1">Sun-Drenched <span class="italic font-light text-primary">18KT Essentials</span></h2>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1">Our Best <span class="italic font-light text-primary">Sellers</span></h2>
           </div>
           <div>
             <a class="inline-flex items-center gap-space-xs font-label-md text-label-md uppercase tracking-[0.18em] text-on-surface hover:text-primary transition-colors py-space-xs whitespace-nowrap group" href="#collections">

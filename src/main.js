@@ -14,6 +14,7 @@ import { asSeenOn } from './components/asSeenOn.js';
 import { trustBanner } from './components/trustBanner.js';
 import { siteFooter } from './components/siteFooter.js';
 import { overlays } from './components/overlays.js';
+import { initCart } from './components/cart.js';
 
 /* EDITORIAL & BESPOKE — paused, not deleted.
    editorial.js renders the "Our Story / ethos" section (anchor: #ethos)
@@ -37,29 +38,10 @@ document.getElementById('app').innerHTML = `
 `;
 
 initHeroVideo();
+initCart();
 bindInteractions();
 
 function bindInteractions() {
-  /* ---- Cart toast (Acquire buttons) ---- */
-  const toast = document.getElementById('cartToast');
-  const toastItem = document.getElementById('cartToastItem');
-  let toastTimer;
-
-  document.querySelectorAll('[data-add-to-cart]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const name = btn.getAttribute('data-add-to-cart');
-      const price = Number(btn.dataset.price || 0).toLocaleString('en-US');
-      toastItem.textContent = `${name} — E£${price}`;
-      toast.classList.remove('translate-y-24', 'opacity-0');
-      toast.classList.add('translate-y-0', 'opacity-100');
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => {
-        toast.classList.add('translate-y-24', 'opacity-0');
-        toast.classList.remove('translate-y-0', 'opacity-100');
-      }, 4500);
-    });
-  });
-
   /* ---- Wishlist hearts ---- */
   document.querySelectorAll('.wishlist-btn').forEach((btn) => {
     btn.addEventListener('click', () => {

@@ -43,7 +43,7 @@ export function siteHeader() {
           <a aria-label="Wishlist" class="text-on-surface-variant hover:text-on-surface transition-colors flex items-center" data-path="wishlist" href="#">
             <span class="material-symbols-outlined text-[20px]">favorite</span>
           </a>
-          <a aria-label="Shopping Bag" class="text-on-surface-variant hover:text-on-surface transition-colors relative flex items-center" data-path="shopping-bag" href="#">
+          <a aria-label="Shopping Bag" class="text-on-surface-variant hover:text-on-surface transition-colors relative flex items-center" data-path="shopping-bag" data-cart-open href="#">
             <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
             <span class="absolute -top-1.5 -right-2 bg-primary text-on-primary font-label-sm text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold leading-none" data-cart-count>2</span>
           </a>
@@ -82,7 +82,7 @@ export function siteHeader() {
           <button aria-label="Search Catalog" class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors">
             <span class="material-symbols-outlined text-[22px]">search</span>
           </button>
-          <a aria-label="Shopping Bag" class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors relative" data-path="shopping-bag" href="#">
+          <a aria-label="Shopping Bag" class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors relative" data-path="shopping-bag" data-cart-open href="#">
             <span class="material-symbols-outlined text-[22px]">shopping_bag</span>
             <span class="absolute top-2 right-2 w-4 h-4 bg-primary text-on-primary font-label-sm text-label-sm rounded-full flex items-center justify-center" data-cart-count>2</span>
           </a>

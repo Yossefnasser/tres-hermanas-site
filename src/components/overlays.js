@@ -51,8 +51,30 @@ export function overlays() {
       <p class="font-label-sm text-label-sm uppercase tracking-wider text-primary-fixed">Acquisition Added</p>
       <p class="font-body-sm text-body-sm line-clamp-1 font-serif" id="cartToastItem"></p>
     </div>
-    <a class="font-label-sm text-label-sm uppercase tracking-widest underline hover:text-primary-fixed" data-path="shopping-bag" href="#">
+    <a class="font-label-sm text-label-sm uppercase tracking-widest underline hover:text-primary-fixed" data-path="shopping-bag" data-cart-open href="#">
       View Bag
     </a>
-  </div>`;
+  </div>
+
+  <!-- ================= CART DRAWER ================= -->
+  <div id="cartBackdrop" class="fixed inset-0 z-40 bg-on-surface/50 backdrop-blur-sm hidden"></div>
+  <aside id="cartDrawer" aria-label="Shopping bag" class="fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-surface shadow-xl translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="flex items-center justify-between px-space-lg py-space-md border-b border-outline-variant/30">
+      <h3 class="font-headline-sm text-headline-sm text-on-surface">Your Vault <span id="cartDrawerCount" class="font-label-sm text-label-sm text-tertiary align-middle"></span></h3>
+      <button aria-label="Close Bag" class="text-on-surface-variant hover:text-on-surface transition-colors" data-cart-close>
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div class="flex-1 overflow-y-auto" id="cartItems"></div>
+    <div class="border-t border-outline-variant/30 p-space-lg space-y-space-md bg-surface-container-low">
+      <div class="flex items-center justify-between font-label-sm text-label-sm uppercase tracking-widest text-tertiary">
+        <span>Subtotal</span>
+        <span id="cartSubtotal" class="text-on-surface font-body-lg text-body-lg font-medium tracking-normal"></span>
+      </div>
+      <p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Complimentary insured courier · Duties included</p>
+      <button id="checkoutBtn" class="w-full py-space-md bg-on-surface text-surface hover:bg-primary transition-colors font-label-md text-label-md uppercase tracking-widest">
+        Proceed To Acquisition
+      </button>
+    </div>
+  </aside>`;
 }
