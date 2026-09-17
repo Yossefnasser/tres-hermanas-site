@@ -7,10 +7,15 @@
  * `category` = mobile card category label (desktop uses meta pair instead)
  */
 
+/* Temporary: real per-product alternate shots don't exist yet — every card
+   falls back to this image on hover until you add `hoverImg` to a product. */
+export const DEFAULT_HOVER_IMG = '/imgs/2.jpg';
+
 export const capsuleProducts = [
   {
     name: 'Emerald Cord Choker & Amulet',
-    img: '/imgs/2.jpg', // e.g. '/assets/imgs/capsule-1.jpg'
+    img: '/imgs/9.jpg', // e.g. '/assets/imgs/capsule-1.jpg'
+    hoverImg:'/imgs/10.jpg',
     tag: 'Waterproof Cord',
     tagTone: 'primary',
     mTag: 'Muzo',
@@ -23,7 +28,8 @@ export const capsuleProducts = [
   },
   {
     name: 'Delicate Emerald & Diamond Cuffs',
-    img: '/imgs/3.jpg', // e.g. '/assets/imgs/capsule-2.jpg'
+    img: '/imgs/11.jpg', // e.g. '/assets/imgs/capsule-2.jpg'
+    hoverImg:'/imgs/12.jpg',
     tag: 'Seaside Stack',
     tagTone: 'dark',
     mTag: 'Icon',
@@ -36,7 +42,8 @@ export const capsuleProducts = [
   },
   {
     name: 'Sunlit Topaz & Pavé Orbit Ring',
-    img: '/imgs/4.jpg',   // ← was null, now a real image
+    img: '/imgs/13.jpg', // e.g. '/assets/imgs/capsule-2.jpg'
+    hoverImg:'/imgs/14.jpg',
     tag: 'Summer Solitaire',
     tagTone: 'dark',
     mTag: null,
@@ -49,7 +56,8 @@ export const capsuleProducts = [
   },
   {
     name: 'Summer Multi-Gem Charm Cord',
-    img: '/imgs/5.jpg', // e.g. '/assets/imgs/capsule-4.jpg'
+    img: '/imgs/15.jpg', // e.g. '/assets/imgs/capsule-2.jpg'
+    hoverImg:'/imgs/16.jpg',
     tag: 'Limited Edition',
     tagTone: 'primary',
     mTag: 'Talisman',

@@ -1,5 +1,5 @@
 import { placeholder } from './placeholder.js';
-import { capsuleProducts } from '../data/products.js';
+import { capsuleProducts, DEFAULT_HOVER_IMG } from '../data/products.js';
 
 const tagTone = {
   primary: 'bg-primary text-on-primary',
@@ -40,6 +40,8 @@ export function summerCapsule() {
             ${p.img
               ? `<img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105">`
               : placeholder(p.name, { tone: 'low' })}
+            <img src="${p.hoverImg || DEFAULT_HOVER_IMG}" alt="${p.name} — alternate view" loading="lazy"
+              class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               ${p.tag ? `<span class="absolute top-2 left-2 ${tagTone[p.tagTone]} font-label-sm text-label-sm px-2 py-0.5 tracking-wider uppercase">${p.tag}</span>` : ''}
               <button aria-label="Add to Wishlist" class="wishlist-btn absolute top-2 right-2 w-8 h-8 rounded-full bg-surface/80 backdrop-blur-sm flex items-center justify-center text-on-surface hover:text-error transition-colors" type="button">
                 <span class="material-symbols-outlined text-[18px]">favorite</span>
@@ -84,6 +86,8 @@ export function summerCapsule() {
             ${p.img
               ? `<img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105">`
               : placeholder(p.name)}
+            <img src="${p.hoverImg || DEFAULT_HOVER_IMG}" alt="${p.name} — alternate view" loading="lazy"
+              class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
             <button class="wishlist-btn absolute top-2 right-2 w-8 h-8 rounded-full bg-surface/80 backdrop-blur text-on-surface hover:text-primary flex items-center justify-center transition-colors">
               <span class="material-symbols-outlined text-[18px]">favorite</span>
             </button>

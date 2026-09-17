@@ -5,12 +5,22 @@ import { hero, initHeroVideo } from './components/hero.js';
 import { summerCapsule } from './components/summerCapsule.js';
 import { collections } from './components/collections.js';
 import { iconsCollection } from './components/iconsCollection.js';
-import { editorial } from './components/editorial.js';
-import { bespoke } from './components/bespoke.js';
+// Paused for now — to re-enable, uncomment these two imports,
+// add ${editorial()} / ${bespoke()} back into <main>, and remove the
+// leading "//" from the lines in the EDITORIAL & BESPOKE note below.
+// import { editorial } from './components/editorial.js';
+// import { bespoke } from './components/bespoke.js';
 import { asSeenOn } from './components/asSeenOn.js';
 import { trustBanner } from './components/trustBanner.js';
 import { siteFooter } from './components/siteFooter.js';
 import { overlays } from './components/overlays.js';
+
+/* EDITORIAL & BESPOKE — paused, not deleted.
+   editorial.js renders the "Our Story / ethos" section (anchor: #ethos)
+   bespoke.js    renders the "Bespoke Atelier" section.
+   To re-enable: uncomment the two imports above, then insert
+   the matching section back into <main> (previously between
+   iconsCollection and trustBanner). Both component files are intact. */
 
 document.getElementById('app').innerHTML = `
   ${siteHeader()}
@@ -18,10 +28,8 @@ document.getElementById('app').innerHTML = `
     ${hero()}
     ${summerCapsule()}
     ${collections()}
-    ${iconsCollection()}
-    ${editorial()}
-    ${bespoke()}
     ${asSeenOn()}
+    ${iconsCollection()}
     ${trustBanner()}
   </main>
   ${siteFooter()}
@@ -141,5 +149,19 @@ function bindInteractions() {
   /* ---- Placeholder routes: keep hash links from jumping ---- */
   document.querySelectorAll('a[href="#"]').forEach((a) => {
     a.addEventListener('click', (e) => e.preventDefault());
+  });
+
+  /* ---- As Seen On jewellery hotspot dots (tap toggle for touch) ---- */
+  document.querySelectorAll('.shop-dot').forEach((dot) => {
+    dot.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const spot = dot.closest('.shop-spot');
+      const wasOpen = spot.classList.contains('is-open');
+      document.querySelectorAll('.shop-spot.is-open').forEach((s) => s.classList.remove('is-open'));
+      if (!wasOpen) spot.classList.add('is-open');
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.shop-spot.is-open').forEach((s) => s.classList.remove('is-open'));
   });
 }

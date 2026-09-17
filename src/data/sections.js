@@ -42,18 +42,34 @@ export const vitrines = [
   }
 ];
 
+/* Shoppable jewellery hotspots per celebrity photo:
+   x/y = % position over the card image, img/label shown in the hover popover.
+   Swap `img` for real product shots as they become available. */
+const pressSpots = {
+  amina: [{ x: 54, y: 27, img: '/imgs/2.jpg', label: 'Turquoise Cabochon Drop Earring' }],
+  mayan: [
+    { x: 65.5, y: 30, img: '/imgs/2.jpg', label: 'Amethyst Charm Hoop' },
+    { x: 40, y: 42, img: '/imgs/6.jpg', label: 'Diamond Pavé Ring' }
+  ],
+  rakaan: [{ x: 38, y: 41, img: '/imgs/6.jpg', label: 'Emerald Cut Ring Stack' }],
+  menna: [
+    { x: 36.5, y: 33, img: '/imgs/5.jpg', label: 'Diamond Drop Earrings' },
+    { x: 47.5, y: 54, img: '/imgs/5.jpg', label: 'Tennis Necklace Layering' }
+  ]
+};
+
 export const pressDesktop = [
-  { kicker: 'Gouna Film Festival', name: 'Amina Khalil', img: '/imgs/amina.jpg' }, // e.g. '/assets/imgs/press-1.jpg'
-  { kicker: 'Vogue Arabia Feature', name: 'Mayan El Sayed', img: '/imgs/mayan.jpg' }, // e.g. '/assets/imgs/press-2.jpg'
-  { kicker: 'Editorial Portrait', name: 'Rakeen Saad', img: '/imgs/rakaan.jpg' }, // e.g. '/assets/imgs/press-3.jpg'
-  { kicker: 'Artisan High Jewellery', name: 'Menna Shalaby', img: '/imgs/menna.jpg' } // e.g. '/assets/imgs/press-4.jpg'
+  { kicker: 'Gouna Film Festival', name: 'Amina Khalil', img: '/imgs/amina.jpg', spots: pressSpots.amina }, // e.g. '/assets/imgs/press-1.jpg'
+  { kicker: 'Vogue Arabia Feature', name: 'Mayan El Sayed', img: '/imgs/mayan.jpg', spots: pressSpots.mayan }, // e.g. '/assets/imgs/press-2.jpg'
+  { kicker: 'Editorial Portrait', name: 'Rakeen Saad', img: '/imgs/rakaan.jpg', spots: pressSpots.rakaan }, // e.g. '/assets/imgs/press-3.jpg'
+  { kicker: 'Artisan High Jewellery', name: 'Menna Shalaby', img: '/imgs/menna.jpg', spots: pressSpots.menna } // e.g. '/assets/imgs/press-4.jpg'
 ];
 
 export const pressMobile = [
-  { caption: 'Amina Khalil · Cairo Gala', img: '/imgs/amina.jpg' }, // e.g. '/assets/imgs/press-1.jpg'
-  { caption: 'Mayan El Sayed · Cannes', img: '/imgs/mayan.jpg' }, // e.g. '/assets/imgs/press-2.jpg'
-  { caption: 'Vogue Arabia Editorial', img: '/imgs/rakaan.jpg' }, // e.g. '/assets/imgs/press-3.jpg'
-  { caption: "L'Officiel Haute Joaillerie", img: '/imgs/menna.jpg' } // e.g. '/assets/imgs/press-4.jpg'
+  { caption: 'Amina Khalil · Cairo Gala', img: '/imgs/amina.jpg', spots: pressSpots.amina }, // e.g. '/assets/imgs/press-1.jpg'
+  { caption: 'Mayan El Sayed · Cannes', img: '/imgs/mayan.jpg', spots: pressSpots.mayan }, // e.g. '/assets/imgs/press-2.jpg'
+  { caption: 'Vogue Arabia Editorial', img: '/imgs/rakaan.jpg', spots: pressSpots.rakaan }, // e.g. '/assets/imgs/press-3.jpg'
+  { caption: "L'Officiel Haute Joaillerie", img: '/imgs/menna.jpg', spots: pressSpots.menna } // e.g. '/assets/imgs/press-4.jpg'
 ];
 
 export const trustDesktop = [

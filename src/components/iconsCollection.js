@@ -1,5 +1,5 @@
 import { placeholder } from './placeholder.js';
-import { iconProducts } from '../data/products.js';
+import { iconProducts, DEFAULT_HOVER_IMG } from '../data/products.js';
 
 const badgeTone = { primary: 'bg-primary text-on-primary', dark: 'bg-on-surface text-surface' };
 
@@ -48,6 +48,8 @@ export function iconsCollection() {
               ${p.img
                 ? `<img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105">`
                 : placeholder(p.name, { tone: 'low' })}
+              <img src="${p.hoverImg || p.img}" alt="${p.name} — alternate view" loading="lazy"
+                class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               ${p.badge ? `<span class="absolute top-2 left-2 ${badgeTone[p.badgeTone]} font-label-sm text-label-sm px-2 py-0.5 tracking-wider uppercase">${p.badge}</span>` : ''}
               <button aria-label="Add to Wishlist" class="wishlist-btn absolute top-2 right-2 w-8 h-8 rounded-full bg-surface/80 backdrop-blur-sm flex items-center justify-center text-on-surface hover:text-error transition-colors" type="button">
                 <span class="material-symbols-outlined text-[18px]">favorite</span>
@@ -103,6 +105,8 @@ export function iconsCollection() {
             ${p.img
               ? `<img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105">`
               : placeholder(p.name)}
+            <img src="${p.hoverImg || p.img}" alt="${p.name} — alternate view" loading="lazy"
+              class="absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
             <button class="wishlist-btn absolute top-2 right-2 w-8 h-8 rounded-full bg-surface/80 backdrop-blur text-on-surface hover:text-primary flex items-center justify-center transition-colors">
               <span class="material-symbols-outlined text-[18px]">favorite</span>
             </button>
