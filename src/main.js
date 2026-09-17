@@ -10,12 +10,11 @@ import { bespoke } from './components/bespoke.js';
 import { asSeenOn } from './components/asSeenOn.js';
 import { trustBanner } from './components/trustBanner.js';
 import { siteFooter } from './components/siteFooter.js';
-import { mobileNav } from './components/mobileNav.js';
 import { overlays } from './components/overlays.js';
 
 document.getElementById('app').innerHTML = `
   ${siteHeader()}
-  <main class="w-full pt-16 lg:pt-20 pb-24 lg:pb-0 bg-surface flex flex-col">
+  <main class="w-full pt-16 lg:pt-20 bg-surface flex flex-col">
     ${hero()}
     ${summerCapsule()}
     ${collections()}
@@ -26,7 +25,6 @@ document.getElementById('app').innerHTML = `
     ${trustBanner()}
   </main>
   ${siteFooter()}
-  ${mobileNav()}
   ${overlays()}
 `;
 
