@@ -28,8 +28,8 @@ export const capsuleProducts = [
   },
   {
     name: 'Delicate Emerald & Diamond Cuffs',
-    img: '/imgs/11.jpg', // e.g. '/assets/imgs/capsule-2.jpg'
-    hoverImg:'/imgs/12.jpg',
+    img: '/imgs/19.jpg', // e.g. '/assets/imgs/capsule-2.jpg'
+    hoverImg:'/imgs/20.jpg',
     tag: 'Seaside Stack',
     tagTone: 'dark',
     mTag: 'Icon',
@@ -73,7 +73,8 @@ export const capsuleProducts = [
 export const iconProducts = [
   {
     name: 'The Sovereign Emerald Cord Pendant',
-    img: '/imgs/2.jpg', // e.g. '/assets/imgs/icon-1.jpg'
+    img: '/imgs/19.jpg', // e.g. '/assets/imgs/capsule-2.jpg'
+    hoverImg:'/imgs/20.jpg',
     badge: 'Archival Best Seller',
     badgeTone: 'dark',
     category: 'EMERALD',
@@ -84,7 +85,8 @@ export const iconProducts = [
   },
   {
     name: 'Mediterranean Multi-Gem Amulet',
-    img: '/imgs/3.jpg', // e.g. '/assets/imgs/icon-2.jpg'
+    img: '/imgs/21.jpg', // e.g. '/assets/imgs/capsule-2.jpg'
+    hoverImg:'/imgs/22.jpg',
     badge: 'Atelier Icon',
     badgeTone: 'primary',
     category: 'TALISMAN',
@@ -95,7 +97,8 @@ export const iconProducts = [
   },
   {
     name: 'Marquise Diamond & Emerald Ring',
-    img: '/imgs/6.jpg', // e.g. '/assets/imgs/icon-3.jpg'
+    img: '/imgs/23.jpg', // e.g. '/assets/imgs/capsule-2.jpg'
+    hoverImg:'/imgs/24.jpg',
     badge: null,
     badgeTone: null,
     category: 'RINGS',
@@ -106,7 +109,8 @@ export const iconProducts = [
   },
   {
     name: 'Diamond Star & Tennis Stack',
-    img: '/imgs/5.jpg', // e.g. '/assets/imgs/icon-4.jpg'
+    img: '/imgs/15.jpg', // e.g. '/assets/imgs/capsule-2.jpg'
+    hoverImg:'/imgs/16.jpg',
     badge: 'Stack of 4',
     badgeTone: 'dark',
     category: 'BRACELETS',
@@ -117,7 +121,8 @@ export const iconProducts = [
   },
   {
     name: 'Cushion Cut Solitaire Honey Topaz',
-    img: '/imgs/1.jpg', // e.g. '/assets/imgs/icon-5.jpg'
+    img: '/imgs/13.jpg', // e.g. '/assets/imgs/capsule-2.jpg'
+    hoverImg:'/imgs/14.jpg',
     badge: null,
     badgeTone: null,
     category: 'SOLITAIRES',
@@ -128,7 +133,8 @@ export const iconProducts = [
   },
   {
     name: 'The Duo Delicate Emerald Cuff',
-    img: '/imgs/4.jpg', // e.g. '/assets/imgs/icon-6.jpg'
+    img: '/imgs/9.jpg', // e.g. '/assets/imgs/capsule-2.jpg'
+    hoverImg:'/imgs/10.jpg',
     badge: null,
     badgeTone: null,
     category: 'CUFFS',
