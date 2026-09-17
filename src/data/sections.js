@@ -46,15 +46,15 @@ export const vitrines = [
    x/y = % position over the card image, img/label shown in the hover popover.
    Swap `img` for real product shots as they become available. */
 const pressSpots = {
-  amina: [{ x: 54, y: 27, img: '/imgs/2.jpg', label: 'Turquoise Cabochon Drop Earring' }],
+  amina: [{ x: 54, y: 27, img: '/imgs/17.jpg', label: 'Turquoise Cabochon Drop Earring' }],
   mayan: [
     { x: 65.5, y: 30, img: '/imgs/2.jpg', label: 'Amethyst Charm Hoop' },
     { x: 40, y: 42, img: '/imgs/6.jpg', label: 'Diamond Pavé Ring' }
   ],
   rakaan: [{ x: 38, y: 41, img: '/imgs/6.jpg', label: 'Emerald Cut Ring Stack' }],
   menna: [
-    { x: 36.5, y: 33, img: '/imgs/5.jpg', label: 'Diamond Drop Earrings' },
-    { x: 47.5, y: 54, img: '/imgs/5.jpg', label: 'Tennis Necklace Layering' }
+    { x: 36.5, y: 33, img: '/imgs/11.jpg', label: 'Diamond Drop Earrings' },
+    { x: 47.5, y: 54, img: '/imgs/11.jpg', label: 'Tennis Necklace Layering' }
   ]
 };
 
